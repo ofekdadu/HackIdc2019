@@ -18,8 +18,8 @@ import timeit
 # In[2]:
 
 
-img1 = cv2.imread('test/fofek1.png')[:,:,::-1]
-img2 = cv2.imread('test/fofek2.png')[:,:,::-1]
+img1 = cv2.imread('fofek1.png')[:,:,::-1]
+img2 = cv2.imread('fofek2.png')[:,:,::-1]
 
 img1_location = api.human_locations(img1)
 img2_location = api.human_locations(img2)
