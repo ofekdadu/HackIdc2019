@@ -175,7 +175,8 @@ i=0
 j=0
 for personIn in inList:
     for personOut in outList:
-        results[i,j] = api.human_distance(personIn,personOut)
+        #results[i,j] = api.human_distance(personIn,personOut)
+        print(api.human_distance(personIn, personOut))
         i+=1
     j+=1
 
