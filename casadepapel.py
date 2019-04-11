@@ -18,113 +18,163 @@ import timeit
 # In[2]:
 
 
-img1 = cv2.imread('fofek1.png')[:,:,::-1]
-img2 = cv2.imread('fofek2.png')[:,:,::-1]
-img3 = cv2.imread('fofek3.png')[:,:,::-1]
-img4 = cv2.imread('fofek4.png')[:,:,::-1]
-
-img5 = cv2.imread('fofeklookalike.png')[:,:,::-1]
-
-
-img1_location = api.human_locations(img1)
-img2_location = api.human_locations(img2)
-img3_location = api.human_locations(img3)
-img4_location = api.human_locations(img4)
-img5_location = api.human_locations(img5)
+# img1 = cv2.imread('fofek1.png')[:,:,::-1]
+# img2 = cv2.imread('fofek2.png')[:,:,::-1]
+# img3 = cv2.imread('fofek3.png')[:,:,::-1]
+# img4 = cv2.imread('fofek4.png')[:,:,::-1]
+#
+# img5 = cv2.imread('fofeklookalike.png')[:,:,::-1]
 
 
+# ---------1
+ofek1 = cv2.imread('ofek1.png')[:,:,::-1]
+ofek2 = cv2.imread('ofek2.png')[:,:,::-1]
+ofek3 = cv2.imread('ofek3.png')[:,:,::-1]
+
+ofek4 = cv2.imread('ofek4.png')[:,:,::-1]
+ofek5 = cv2.imread('ofek5.png')[:,:,::-1]
+ofek6 = cv2.imread('ofek6.png')[:,:,::-1]
+
+#  ------------
+alon1 = cv2.imread('alon1.png')[:,:,::-1]
+alon2 = cv2.imread('alon2.png')[:,:,::-1]
+alon3 = cv2.imread('alon3.png')[:,:,::-1]
+
+alon4 = cv2.imread('alon4.png')[:,:,::-1]
+alon5 = cv2.imread('alon5.png')[:,:,::-1]
+alon6 = cv2.imread('alon6.png')[:,:,::-1]
+
+#  ------------
+tamir1 = cv2.imread('tamir1.png')[:,:,::-1]
+tamir2 = cv2.imread('tamir2.png')[:,:,::-1]
+tamir3 = cv2.imread('tamir3.png')[:,:,::-1]
+
+tamir4 = cv2.imread('tamir4.png')[:,:,::-1]
+tamir5 = cv2.imread('tamir5.png')[:,:,::-1]
+tamir6 = cv2.imread('tamir6.png')[:,:,::-1]
+
+#  ------------
+michael1 = cv2.imread('michael1.png')[:,:,::-1]
+michael2 = cv2.imread('michael2.png')[:,:,::-1]
+michael3 = cv2.imread('michael3.png')[:,:,::-1]
+
+michael4 = cv2.imread('michael4.png')[:,:,::-1]
+michael5 = cv2.imread('michael5.png')[:,:,::-1]
+michael6 = cv2.imread('michael6.png')[:,:,::-1]
+
+#  ------------
+lili1 = cv2.imread('lili1.png')[:,:,::-1]
+lili2 = cv2.imread('lili2.png')[:,:,::-1]
+lili3 = cv2.imread('lili3.png')[:,:,::-1]
+
+lili4 = cv2.imread('lili4.png')[:,:,::-1]
+lili5 = cv2.imread('lili5.png')[:,:,::-1]
+lili6 = cv2.imread('lili6.png')[:,:,::-1]
+
+#  ------------
+alice1 = cv2.imread('alice1.png')[:,:,::-1]
+alice2 = cv2.imread('alice2.png')[:,:,::-1]
+alice3 = cv2.imread('alice3.png')[:,:,::-1]
+
+alice4 = cv2.imread('alice4.png')[:,:,::-1]
+alice5 = cv2.imread('alice5.png')[:,:,::-1]
+alice6 = cv2.imread('alice6.png')[:,:,::-1]
 
 
-img_1_human = api.crop_human(img1, img1_location)
-img_2_human = api.crop_human(img2, img2_location)
-img_3_human = api.crop_human(img3, img3_location)
-img_4_human = api.crop_human(img4, img4_location)
-img_5_human = api.crop_human(img5, img5_location)
+#  ------------
+ido1 = cv2.imread('ido1.png')[:, :, ::-1]
+ido2 = cv2.imread('ido2.png')[:, :, ::-1]
+ido3 = cv2.imread('ido3.png')[:, :, ::-1]
+
+ido4 = cv2.imread('ido4.png')[:, :, ::-1]
+ido5 = cv2.imread('ido5.png')[:, :, ::-1]
+ido6 = cv2.imread('ido6.png')[:, :, ::-1]
+
+#-----------
+
+bob1 = cv2.imread('bob1.png')[:, :, ::-1]
+bob2 = cv2.imread('bob2.png')[:, :, ::-1]
+bob3 = cv2.imread('bob3.png')[:, :, ::-1]
+
+bob4 = cv2.imread('bob4.png')[:, :, ::-1]
+bob5 = cv2.imread('bob5.png')[:, :, ::-1]
+bob6 = cv2.imread('bob6.png')[:, :, ::-1]
+
+#-----------
+
+alex1 = cv2.imread('alex1.png')[:, :, ::-1]
+alex2 = cv2.imread('alex2.png')[:, :, ::-1]
+alex3 = cv2.imread('alex3.png')[:, :, ::-1]
+
+alex4 = cv2.imread('alex4.png')[:, :, ::-1]
+alex5 = cv2.imread('alex5.png')[:, :, ::-1]
+alex6 = cv2.imread('alex6.png')[:, :, ::-1]
+
+
+def enrichEmbed(img1,img2,img3):
+    img1_location = api.human_locations(img1)
+    img2_location = api.human_locations(img2)
+    img3_location = api.human_locations(img3)
+
+    img_1_human = api.crop_human(img1, img1_location)
+    img_2_human = api.crop_human(img2, img2_location)
+    img_3_human = api.crop_human(img3, img3_location)
+
+
+    human_1_2 = img_2_human[0]
+    plt.imshow(human_1_2)
+
+    # human 1 photo 2
+    human_1_3 = img_3_human[0]
+    plt.imshow(human_1_3)
+
+
+    human_1_1_vector = api.human_vector(human_1_1)
+    human_1_2_vector = api.human_vector(human_1_2)
+    human_1_3_vector = api.human_vector(human_1_3)
+
+    return (human_1_1_vector +human_1_2_vector +human_1_3_vector )/3
 
 
 
+ofekin = enrichEmbed(ofek1,ofek2,ofek3)
+ofekout = enrichEmbed(ofek4,ofek5,ofek6)
 
-# In[3]:
-
-
-# human 1 photo 1
-human_1_1 = img_1_human[0]
-plt.imshow(human_1_1)
+tamirin = enrichEmbed(tamir1,tamir2,tamir3)
+tamirout = enrichEmbed(tamir4,tamir5,tamir6)
 
 
-# In[4]:
+alexin = enrichEmbed(alex1,alex2,alex3)
+alexout = enrichEmbed(alex4,alex5,alex6)
 
+alicein = enrichEmbed(alice1,alice2,alice3)
+aliceout = enrichEmbed(alice4,alice5,alice6)
 
-# human 1 photo 2
-human_1_2 = img_2_human[0]
-plt.imshow(human_1_2)
+bobin = enrichEmbed(bob1,bob2,bob3)
+bobout = enrichEmbed(bob4,bob5,bob6)
 
-# human 1 photo 2
-human_1_3 = img_3_human[0]
-plt.imshow(human_1_3)
-# human 1 photo 2
-human_1_4 = img_4_human[0]
-plt.imshow(human_1_3)
+idoin = enrichEmbed(ido1,ido2,ido3)
+idoout = enrichEmbed(ido4,ido5,ido6)
 
-# human 2 photo 1
-human_2_1 = img_5_human[0]
-plt.imshow(human_2_1)
+liliin = enrichEmbed(lili1,lili2,lili3)
+liliout = enrichEmbed(lili4,lili5,lili6)
 
+michaelin = enrichEmbed(michael1,michael2,michael3)
+michaelout = enrichEmbed(michael4,michael5,michael6)
 
-# In[5]:
+alonin = enrichEmbed(alon1,alon2,alon3)
+alonout = enrichEmbed(alon4,alon5,alon6)
 
+inList = {ofekin,tamirin,alonin,idoin,liliin,alicein,alexin,bobin,michaelin}
+outList = {ofekout,tamirout,alonout,idoout,liliout,aliceout,alexout,bobout,michaelout}
 
+results=[9,9]
+i=0
+j=0
+for personIn in inList:
+    for personOut in outList:
+        results[i,j] = api.human_distance(personIn,personOut)
+        i+=1
+    j+=1
 
-
-# # Make vector of human image
-
-# In[6]:
-
-
-t1 = timeit.default_timer()
-human_1_1_vector = api.human_vector(human_1_1)
-human_1_2_vector = api.human_vector(human_1_2)
-human_1_3_vector = api.human_vector(human_1_3)
-human_1_4_vector = api.human_vector(human_1_4)
-human_2_1_vector = api.human_vector(human_2_1)
-
-
-t2 = timeit.default_timer()
-print('Time elapsed: {} sec'.format(round(t2 - t1, 3)))
-
-
-# # Comparing vector
-
-# In[7]:
-
-
-print("Fofek with sweatshirt vs Fofek with T-shirt:")
-print(api.human_distance(human_1_1_vector, human_1_2_vector))
-
-print("Fofek with sweatshirt vs Fofek with coat:")
-print(api.human_distance(human_1_1_vector, human_1_3_vector))
-
-print("Fofek with T-shirt vs Fofek with coat:")
-print(api.human_distance(human_1_3_vector, human_1_2_vector))
-
-print("Fofek with sweatshirt vs Fofek look alike:")
-print(api.human_distance(human_1_1_vector, human_2_1_vector))
-
-print("Fofek look alike vs Fofek with coat:")
-print(api.human_distance(human_2_1_vector, human_1_3_vector))
-
-print("Fofek with T-shirt vs Fofek look alike:")
-print(api.human_distance(human_1_3_vector, human_2_1_vector))
-
-print("Fofek with sweatshirt vs Fofek with hat:")
-print(api.human_distance(human_1_1_vector, human_1_4_vector))
-
-print("Fofek with hat vs Fofek with coat:")
-print(api.human_distance(human_1_4_vector, human_1_3_vector))
-
-print("Fofek with T-shirt vs Fofek with hat:")
-print(api.human_distance(human_1_3_vector, human_1_4_vector))
-
-print("Fofek with hat vs Fofek look alike:")
-print(api.human_distance(human_1_4_vector, human_2_1_vector))
-
+print(results)
