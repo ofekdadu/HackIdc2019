@@ -175,10 +175,10 @@ results=np.zeros((9,9))
 i=0
 j=0
 for personIn in inList:
+    i = 0
     for personOut in outList:
         results[i,j] = api.human_distance(personIn,personOut)
         print(api.human_distance(personIn, personOut))
-
         i+=1
     j+=1
 
