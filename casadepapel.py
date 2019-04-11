@@ -66,6 +66,6 @@ print('Time elapsed: {} sec'.format(round(t2 - t1, 3)))
 # In[7]:
 
 
-api.human_distance(human_1_1_vector, human_1_2_vector)
+print(api.human_distance(human_1_1_vector, human_1_2_vector))
 
 
