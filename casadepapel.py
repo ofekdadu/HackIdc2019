@@ -122,7 +122,7 @@ def enrichEmbed(img1,img2,img3):
 
     human_1_1 = img_1_human[0]
     # plt.imshow(human_1_1)
-    
+
     human_1_2 = img_2_human[0]
     # plt.imshow(human_1_2)
 
@@ -167,8 +167,8 @@ michaelout = enrichEmbed(michael4,michael5,michael6)
 alonin = enrichEmbed(alon1,alon2,alon3)
 alonout = enrichEmbed(alon4,alon5,alon6)
 
-inList = {ofekin,tamirin,alonin,idoin,liliin,alicein,alexin,bobin,michaelin}
-outList = {ofekout,tamirout,alonout,idoout,liliout,aliceout,alexout,bobout,michaelout}
+inList = [ofekin,tamirin,alonin,idoin,liliin,alicein,alexin,bobin,michaelin]
+outList = [ofekout,tamirout,alonout,idoout,liliout,aliceout,alexout,bobout,michaelout]
 
 results=[9,9]
 i=0
