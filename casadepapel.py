@@ -9,6 +9,7 @@ import api
 import cv2
 from matplotlib import pyplot as plt
 import timeit
+import numpy as np
 #plt.ion()
 # get_ipython().run_line_magic('matplotlib', 'inline')
 
@@ -170,13 +171,14 @@ alonout = enrichEmbed(alon4,alon5,alon6)
 inList = [ofekin,tamirin,alonin,idoin,liliin,alicein,alexin,bobin,michaelin]
 outList = [ofekout,tamirout,alonout,idoout,liliout,aliceout,alexout,bobout,michaelout]
 
-results=[9,9]
+results=np.zeros((9,9))
 i=0
 j=0
 for personIn in inList:
     for personOut in outList:
-        #results[i,j] = api.human_distance(personIn,personOut)
+        results[i,j] = api.human_distance(personIn,personOut)
         print(api.human_distance(personIn, personOut))
+
         i+=1
     j+=1
 
