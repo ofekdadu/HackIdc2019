@@ -120,13 +120,15 @@ def enrichEmbed(img1,img2,img3):
     img_2_human = api.crop_human(img2, img2_location)
     img_3_human = api.crop_human(img3, img3_location)
 
-
+    human_1_1 = img_1_human[0]
+    # plt.imshow(human_1_1)
+    
     human_1_2 = img_2_human[0]
-    plt.imshow(human_1_2)
+    # plt.imshow(human_1_2)
 
     # human 1 photo 2
     human_1_3 = img_3_human[0]
-    plt.imshow(human_1_3)
+    # plt.imshow(human_1_3)
 
 
     human_1_1_vector = api.human_vector(human_1_1)
