@@ -21,13 +21,17 @@ import timeit
 img1 = cv2.imread('fofek1.png')[:,:,::-1]
 img2 = cv2.imread('fofek2.png')[:,:,::-1]
 img3 = cv2.imread('fofek3.png')[:,:,::-1]
-img4 = cv2.imread('fofeklookalike.png')[:,:,::-1]
+img4 = cv2.imread('fofek4.png')[:,:,::-1]
+
+img5 = cv2.imread('fofeklookalike.png')[:,:,::-1]
 
 
 img1_location = api.human_locations(img1)
 img2_location = api.human_locations(img2)
 img3_location = api.human_locations(img3)
 img4_location = api.human_locations(img4)
+img5_location = api.human_locations(img5)
+
 
 
 
@@ -35,6 +39,8 @@ img_1_human = api.crop_human(img1, img1_location)
 img_2_human = api.crop_human(img2, img2_location)
 img_3_human = api.crop_human(img3, img3_location)
 img_4_human = api.crop_human(img4, img4_location)
+img_5_human = api.crop_human(img5, img5_location)
+
 
 
 
@@ -56,9 +62,12 @@ plt.imshow(human_1_2)
 # human 1 photo 2
 human_1_3 = img_3_human[0]
 plt.imshow(human_1_3)
+# human 1 photo 2
+human_1_4 = img_4_human[0]
+plt.imshow(human_1_3)
 
 # human 2 photo 1
-human_2_1 = img_4_human[0]
+human_2_1 = img_5_human[0]
 plt.imshow(human_2_1)
 
 
@@ -76,6 +85,7 @@ t1 = timeit.default_timer()
 human_1_1_vector = api.human_vector(human_1_1)
 human_1_2_vector = api.human_vector(human_1_2)
 human_1_3_vector = api.human_vector(human_1_3)
+human_1_4_vector = api.human_vector(human_1_4)
 human_2_1_vector = api.human_vector(human_2_1)
 
 
@@ -106,4 +116,15 @@ print(api.human_distance(human_2_1_vector, human_1_3_vector))
 print("Fofek with T-shirt vs Fofek look alike:")
 print(api.human_distance(human_1_3_vector, human_2_1_vector))
 
+print("Fofek with sweatshirt vs Fofek with hat:")
+print(api.human_distance(human_1_1_vector, human_1_4_vector))
+
+print("Fofek with hat vs Fofek with coat:")
+print(api.human_distance(human_1_4_vector, human_1_3_vector))
+
+print("Fofek with T-shirt vs Fofek with hat:")
+print(api.human_distance(human_1_3_vector, human_1_4_vector))
+
+print("Fofek with hat vs Fofek look alike:")
+print(api.human_distance(human_1_4_vector, human_2_1_vector))
 
